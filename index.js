@@ -12,7 +12,7 @@ const genresRouter = require('./routes/genres');
 const paintingsRouter = require('./routes/paintings');
 const countsRouter = require('./routes/counts');
 
-// Use routes
+// Register routes with the app
 app.use('/api/eras', erasRouter);
 app.use('/api/galleries', galleriesRouter);
 app.use('/api/artists', artistsRouter);
@@ -20,9 +20,11 @@ app.use('/api/genres', genresRouter);
 app.use('/api/paintings', paintingsRouter);
 app.use('/api/counts', countsRouter);
 
-// Root route
+/* Root route
+* Returns ReadME link with API access info
+*/
 app.get('/', (req, res) => {
-  res.json({ message: 'Art API - see readme.md for endpoints' });
+  res.json({ message: 'Art API - see README: https://github.com/limentum/COMP-4513-A1/blob/main/README.md' });
 });
 
 app.listen(PORT, () => {
