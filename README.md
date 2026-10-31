@@ -2,6 +2,8 @@
 
 ## Overview
 
+API Endpoint for an Art DB, built as a Node/Express server using Supabase and Render.
+
 ## Built With
 
 **Node.js** - JS runtime
@@ -60,4 +62,4 @@
 - <https://comp-4513-a1-hi9r.onrender.com/api/paintings/sort/year/limit/10/skip/30>
 - <https://comp-4513-a1-hi9r.onrender.com/api/paintings/sort/year/limit/10/skip/30000>
 - <https://comp-4513-a1-hi9r.onrender.com/api/paintings/years/1800/1850>
-- <<https://comp-4513-a1-hi9r.onrender.com/api/counts/topgenres/20>
+- <https://comp-4513-a1-hi9r.onrender.com/api/counts/topgenres/20>
