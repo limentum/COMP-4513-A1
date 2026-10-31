@@ -2,7 +2,7 @@
 
 ## Overview
 
-API Endpoint for an Art DB, built as a Node/Express server using Supabase and Render.
+Code Repository for an Art DB Node API Endpoint, built as a Node/Express server on Supabase and Render.
 
 ## Built With
 
@@ -56,7 +56,7 @@ API Endpoint for an Art DB, built as a Node/Express server using Supabase and Re
 
 **/routes/** - API Endpoints.
 
-## Test Links
+## Test/Example Links
 
 - <https://comp-4513-a1-hi9r.onrender.com/api/galleries/country/fra>
 - <https://comp-4513-a1-hi9r.onrender.com/api/paintings/sort/year/limit/10/skip/30>
