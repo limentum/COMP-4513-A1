@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient');
 
-// GET /api/galleries - Returns all galleries
+// /api/galleries - Returns all galleries
 router.get('/', async (req, res) => {
     try {
         const { data, error } = await supabase
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/galleries/:ref - Returns specific gallery by gallery_id
+// /api/galleries/:ref - Returns specific gallery by gallery_id
 router.get('/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -39,7 +39,7 @@ router.get('/:ref', async (req, res) => {
     }
 });
 
-// GET /api/galleries/country/:substring - Search galleries by country
+// /api/galleries/country/:substring - Search galleries by country
 router.get('/country/:substring', async (req, res) => {
     try {
         const { substring } = req.params;

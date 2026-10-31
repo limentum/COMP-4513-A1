@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient');
 
-// GET /api/paintings/single/:ref - Returns specific painting
+// /api/paintings/single/:ref - Returns specific painting
 router.get('/single/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -25,7 +25,7 @@ router.get('/single/:ref', async (req, res) => {
     }
 });
 
-// GET /api/paintings/sort/:field/limit/:limit
+// /api/paintings/sort/:field/limit/:limit
 router.get('/sort/:field/limit/:limit', async (req, res) => {
     try {
         const { field, limit } = req.params;
@@ -68,7 +68,7 @@ router.get('/sort/:field/limit/:limit', async (req, res) => {
     }
 });
 
-// GET /api/paintings/sort/:field/limit/:limit/skip/:skip
+// /api/paintings/sort/:field/limit/:limit/skip/:skip
 router.get('/sort/:field/limit/:limit/skip/:skip', async (req, res) => {
     try {
         const { field, limit, skip } = req.params;
@@ -114,7 +114,7 @@ router.get('/sort/:field/limit/:limit/skip/:skip', async (req, res) => {
     }
 });
 
-// GET /api/paintings/search/:substring - Search paintings by title
+// /api/paintings/search/:substring - Search paintings by title
 router.get('/search/:substring', async (req, res) => {
     try {
         const { substring } = req.params;
@@ -139,7 +139,7 @@ router.get('/search/:substring', async (req, res) => {
     }
 });
 
-// GET /api/paintings/years/:start/:end - Paintings between years
+// /api/paintings/years/:start/:end - Paintings between years
 router.get('/years/:start/:end', async (req, res) => {
     try {
         const { start, end } = req.params;
@@ -180,7 +180,7 @@ router.get('/years/:start/:end', async (req, res) => {
     }
 });
 
-// GET /api/paintings/galleries/:ref - Paintings in a gallery
+// /api/paintings/galleries/:ref - Paintings in a gallery
 router.get('/galleries/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -205,7 +205,7 @@ router.get('/galleries/:ref', async (req, res) => {
     }
 });
 
-// GET /api/paintings/artist/:ref - Paintings by an artist
+// /api/paintings/artist/:ref - Paintings by an artist
 router.get('/artist/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -230,7 +230,7 @@ router.get('/artist/:ref', async (req, res) => {
     }
 });
 
-// GET /api/paintings/genre/:ref - Paintings for a genre (limited fields)
+// /api/paintings/genre/:ref - Paintings for a genre (limited fields)
 router.get('/genre/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -257,7 +257,7 @@ router.get('/genre/:ref', async (req, res) => {
     }
 });
 
-// GET /api/paintings/era/:ref - Paintings for an era (limited fields)
+// /api/paintings/era/:ref - Paintings for an era (limited fields)
 router.get('/era/:ref', async (req, res) => {
     try {
         const { ref } = req.params;

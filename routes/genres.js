@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient');
 
-// GET /api/genres - Returns all genres with era data
+// /api/genres - Returns all genres with era data
 router.get('/', async (req, res) => {
     try {
         const { data, error } = await supabase
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/genres/:ref - Returns specific genre by genre_id
+// /api/genres/:ref - Returns specific genre by genre_id
 router.get('/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -39,7 +39,7 @@ router.get('/:ref', async (req, res) => {
     }
 });
 
-// GET /api/genres/painting/:ref - Returns genres for a specific painting
+// /api/genres/painting/:ref - Returns genres for a specific painting
 router.get('/painting/:ref', async (req, res) => {
     try {
         const { ref } = req.params;

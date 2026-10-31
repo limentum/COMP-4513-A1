@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient');
 
-// GET /api/counts/genres - Genre painting counts (fewest to most)
+// /api/counts/genres - Genre painting counts (fewest to most)
 router.get('/genres', async (req, res) => {
     try {
         const { data, error } = await supabase
@@ -29,7 +29,7 @@ router.get('/genres', async (req, res) => {
     }
 });
 
-// GET /api/counts/artists - Artist painting counts (most to fewest)
+// /api/counts/artists - Artist painting counts (most to fewest)
 router.get('/artists', async (req, res) => {
     try {
         const { data, error } = await supabase
@@ -56,7 +56,7 @@ router.get('/artists', async (req, res) => {
     }
 });
 
-// GET /api/counts/topgenres/:ref - Genres with more than ref paintings
+// /api/counts/topgenres/:ref - Genres with more than ref paintings
 router.get('/topgenres/:ref', async (req, res) => {
     try {
         const { ref } = req.params;

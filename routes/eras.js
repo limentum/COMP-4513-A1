@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient'); // Your Supabase client setup
 
-// GET /api/eras - Returns all eras
+// /api/eras - Returns all eras
 router.get('/', async (req, res) => {
     try {
         const { data, error } = await supabase

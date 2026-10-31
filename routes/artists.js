@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabaseClient');
 
-// GET /api/artists - Returns all artists
+// /api/artists - Returns all artists
 router.get('/', async (req, res) => {
     try {
         const { data, error } = await supabase
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/artists/:ref - Returns specific artist by artist_id
+// /api/artists/:ref - Returns specific artist by artist_id
 router.get('/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
@@ -39,7 +39,7 @@ router.get('/:ref', async (req, res) => {
     }
 });
 
-// GET /api/artists/search/:substring - Search artists by last name
+// /api/artists/search/:substring - Search artists by last name
 router.get('/search/:substring', async (req, res) => {
     try {
         const { substring } = req.params;
@@ -63,7 +63,7 @@ router.get('/search/:substring', async (req, res) => {
     }
 });
 
-// GET /api/artists/country/:substring - Search artists by nationality
+// /api/artists/country/:substring - Search artists by nationality
 router.get('/country/:substring', async (req, res) => {
     try {
         const { substring } = req.params;
