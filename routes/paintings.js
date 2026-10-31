@@ -7,6 +7,7 @@ router.get('/single/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
 
+        // Get painting by ID
         const { data, error } = await supabase
             .from('paintings')
             .select('*, artists!inner(*), galleries!inner(*)')
@@ -94,6 +95,7 @@ router.get('/sort/:field/limit/:limit/skip/:skip', async (req, res) => {
         const sortField = field === 'title' ? 'title' : 'year_of_work';
         const endRange = skipNum + limitNum - 1;
 
+        // Sort and get range of paintings
         const { data, error } = await supabase
             .from('paintings')
             .select('*, artists!inner(*), galleries!inner(*)')
@@ -146,6 +148,7 @@ router.get('/years/:start/:end', async (req, res) => {
         const startYear = parseInt(start);
         const endYear = parseInt(end);
 
+        // Validate years
         if (isNaN(startYear) || isNaN(endYear)) {
             return res.status(400).json({
                 message: `Start and end years must be numbers`
@@ -159,6 +162,7 @@ router.get('/years/:start/:end', async (req, res) => {
             });
         }
 
+        // Get paintings between years
         const { data, error } = await supabase
             .from('paintings')
             .select('*, artists!inner(*), galleries!inner(*)')
@@ -185,6 +189,7 @@ router.get('/galleries/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
 
+        // Get paintings in a gallery
         const { data, error } = await supabase
             .from('paintings')
             .select('*, artists!inner(*), galleries!inner(*)')
@@ -235,6 +240,7 @@ router.get('/genre/:ref', async (req, res) => {
     try {
         const { ref } = req.params;
 
+        // Get paintings for a genre
         const { data, error } = await supabase
             .from('painting_genres')
             .select('paintings!inner(painting_id, title, year_of_work)')
